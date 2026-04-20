@@ -51,12 +51,14 @@ require_once __DIR__ . '/../../includes/employee_header.php';
     <div class="card" style="max-width: 900px;">
 
         <h1>My Payslip</h1>
-        <p class="subtitle centered">View your earnings for <?php echo date('F Y', strtotime("$selectedYear-$selectedMonth-01")); ?></p>
+        <p class="subtitle centered">View your earnings for
+            <?php echo date('F Y', strtotime("$selectedYear-$selectedMonth-01")); ?></p>
 
         <form class="period-form" method="POST">
             <div class="form-group" style="flex: 1;">
                 <label>Select Year</label>
-                <select name="period_year" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #d1d5db; outline: none;">
+                <select name="period_year" required
+                    style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #d1d5db; outline: none;">
                     <?php for ($y = $currentYear; $y >= $minYear; $y--): ?>
                         <option value="<?php echo $y; ?>" <?php echo $y == $selectedYear ? 'selected' : ''; ?>>
                             <?php echo $y; ?>
@@ -66,19 +68,21 @@ require_once __DIR__ . '/../../includes/employee_header.php';
             </div>
             <div class="form-group" style="flex: 1;">
                 <label>Select Month</label>
-                <select name="period_month" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #d1d5db; outline: none;">
-                    <?php 
-                    for ($m = 1; $m <= 12; $m++): 
+                <select name="period_month" required
+                    style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #d1d5db; outline: none;">
+                    <?php
+                    for ($m = 1; $m <= 12; $m++):
                         $monthNum = str_pad($m, 2, '0', STR_PAD_LEFT);
                         $monthName = date('F', mktime(0, 0, 0, $m, 1));
                     ?>
-                        <option value="<?php echo $monthNum; ?>" <?php echo $monthNum === $selectedMonth ? 'selected' : ''; ?>>
+                        <option value="<?php echo $monthNum; ?>"
+                            <?php echo $monthNum === $selectedMonth ? 'selected' : ''; ?>>
                             <?php echo $monthName; ?>
                         </option>
                     <?php endfor; ?>
                 </select>
             </div>
-            <button type="submit" class="primary-btn">Calculate Payslip</button>
+            <button type="submit" class="primary-btn">Calculate</button>
         </form>
 
         <div class="payslip-summary">
