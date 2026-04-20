@@ -84,9 +84,9 @@ $result = mysqli_query($dbc, "SELECT * FROM users ORDER BY created_at DESC");
           <td>$<?= number_format($row['hourly_rate'], 2) ?></td>
           <td><?= ucfirst($row['status']) ?></td>
           <td>
-            <a href="edit_employee.php?id=<?= $row['employee_id'] ?>" class="btn-sm btn-edit">Edit</a>
+            <a href="edit_employee.php?id=<?= $row['user_id'] ?>" class="btn-sm btn-edit">Edit</a>
             <form method="POST" style="display:inline;">
-              <input type="hidden" name="employee_id" value="<?= $row['employee_id'] ?>"/>
+              <input type="hidden" name="employee_id" value="<?= $row['user_id'] ?>"/>
               <button type="submit" name="delete" class="btn-sm btn-delete"
                 onclick="return confirm('Delete this employee?')">Delete</button>
             </form>
