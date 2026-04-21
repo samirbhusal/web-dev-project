@@ -151,6 +151,4 @@ require_once __DIR__ . '/../../includes/employee_header.php';
         btn.querySelector('.eye-on').style.display = isHidden ? 'block' : 'none';
         btn.querySelector('.eye-off').style.display = isHidden ? 'none' : 'block';
     }
-
 </script>
-<?php require_once __DIR__ . '/../../includes/employee_footer.php'; ?>

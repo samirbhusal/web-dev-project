@@ -102,4 +102,3 @@ require_once __DIR__ . '/../../includes/employee_header.php';
 
     </div>
 </div>
-<?php require_once __DIR__ . '/../../includes/employee_footer.php'; ?>

@@ -273,4 +273,3 @@ require_once __DIR__ . '/../../includes/employee_header.php';
     }
     setInterval(tick, 1000);
 </script>
-<?php require_once __DIR__ . '/../../includes/employee_footer.php'; ?>

@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS time_entries (
     clock_in     DATETIME     NOT NULL,
     clock_out    DATETIME     NULL,
     total_hours  DECIMAL(6,2) NULL,
+    late_reason VARCHAR(255) NULL,
     status       ENUM('open','closed') NOT NULL DEFAULT 'open',
     CONSTRAINT fk_time_user
         FOREIGN KEY (user_id) REFERENCES users(user_id)
